@@ -13,7 +13,7 @@ pipeline{
         }
         stage("Push Docker image"){
             steps{
-                sh "docker push itiv4/data-iti:v${BUILD_NUMBER}"
+                sh "docker push atefmousa/data-iti:v${BUILD_NUMBER}"
             }
         }
     }
