@@ -36,13 +36,6 @@ node('agent_1') {
     
     stage("Push Docker Image") {
         sh "docker tag itiv4/data-iti:v${BUILD_NUMBER} atefmousa/data-iti:v${BUILD_NUMBER}"
-        withCredentials([usernamePassword(
-            credentialsId: 'dockerhub-creds',
-            usernameVariable: 'DOCKER_USER',
-            passwordVariable: 'DOCKER_PWD'
-        )]) {
-            sh "echo \$DOCKER_PWD | docker login -u \$DOCKER_USER --password-stdin"
-            sh "docker push atefmousa/data-iti:v${BUILD_NUMBER}"
+        sh "docker push atefmousa/data-iti:v${BUILD_NUMBER}"
         }
-    }
 }
