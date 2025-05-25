@@ -35,7 +35,7 @@ node('agent_1') {
     }
     
     stage("Push Docker Image") {
-        sh "docker tag itiv4/data-iti:v${BUILD_NUMBER} atefmousa/data-iti:v${BUILD_NUMBER}"
-        sh "docker push atefmousa/data-iti:v${BUILD_NUMBER}"
+        sh "docker tag itiv4/data-iti-scripted-way:v${BUILD_NUMBER} atefmousa/data-iti:v${BUILD_NUMBER}"
+        sh "docker push atefmousa/data-iti-scripted-way:v${BUILD_NUMBER}"
         }
 }
